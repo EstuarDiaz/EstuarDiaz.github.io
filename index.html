@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>p5.drag.js example</title>
+  <script data-require="p5.js@0.5.7" data-semver="0.5.7" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.7/p5.min.js"></script>
+  <script data-require="p5.dom.js@0.5.7" data-semver="0.5.7" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.7/addons/p5.dom.min.js"></script>
+  <!-- <script src="libraries/p5.sound.js"></script> -->
+  <script src="sketch.js"></script>
+  <script src="p5.recognize.js"></script>
+  <script src="p5.drag.js"></script>
+  <script>
+  var shapes = [];
+  var shape;
+  var P = "ABCDEFGHIJKLMNOPQRST";
+  var diameter = 15;
+  var showLines = true;
+
+  function myFunction() {
+    var copyText = document.getElementById("lines");
+    copyText.select();
+    copyText.setSelectionRange(0, 99999);
+    document.execCommand("copy");
+  }
+
+  function addPoint() {
+    createEllipse(500, 300, diameter, diameter, "rgb(255, 0, 0)");
+  }
+
+  function removePoint() {
+    shapes.pop();
+  }
+
+  function showLinesFunction(){showLines = !showLines;}
+</script>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    canvas {
+      top: 50px;
+      margin: auto;
+    }
+
+    input {
+      width: 50%;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- The text field -->
+<div id="myCanvas"></div>
+<button onclick="addPoint()">ADD</button>
+<button onclick="removePoint()">REMOVE</button>
+<button onclick="showLinesFunction()">Show lines</button>
+<br>
+Configuration: <input type="text" id="lines" name="lines">
+<!-- The button used to copy the text -->
+<button onclick="myFunction()">Copy text</button>
+<br><br>
+</body>
+
+</html>
