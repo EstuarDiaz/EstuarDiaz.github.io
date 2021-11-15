@@ -23,7 +23,6 @@ p5.prototype.display = function () {
     if(isDragging && shape[1] !== undefined){
         draggin_name = shape[1].name;
     }
-    first_line_index = 0;
     for(var i=0; i<shapes.length; i++){
         for(var j=0; j<shapes.length; j++){
             if(i < j){
@@ -40,9 +39,6 @@ p5.prototype.display = function () {
                 else{
                     line_name = shapes[j].name+shapes[i].name;
                 }
-                if(line_name == 'AB'){
-                    first_line_index = Lines.length*1;
-                }
                 Lines.push({
                     name: line_name,
                     value: ((atan2(shapes[i].x - shapes[j].x, shapes[i].y - shapes[j].y)+180) % 180)
@@ -51,6 +47,12 @@ p5.prototype.display = function () {
         }
     }
     Lines.sort((a, b) => (a.value > b.value) ? 1 : -1)
+    first_line_index = 0;
+    for(var i=0; i < Lines.length; i++){
+        if(Lines[i].name == 'AB'){
+            first_line_index = i;
+        }
+    }
     var configuration = "";
     var configuration_array = "";
     for(var li=first_line_index; li<first_line_index+Lines.length; li++){
