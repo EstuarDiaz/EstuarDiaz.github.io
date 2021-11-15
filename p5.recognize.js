@@ -23,6 +23,7 @@ p5.prototype.display = function () {
     if(isDragging && shape[1] !== undefined){
         draggin_name = shape[1].name;
     }
+    first_line_index = 0;
     for(var i=0; i<shapes.length; i++){
         for(var j=0; j<shapes.length; j++){
             if(i < j){
@@ -33,8 +34,17 @@ p5.prototype.display = function () {
                     line(0, b, windowWidth, m*windowWidth+b);
                 }
                 stroke(100);
+                if(shapes[i].name < shapes[j].name){
+                    line_name = shapes[i].name+shapes[j].name;
+                }
+                else{
+                    line_name = shapes[j].name+shapes[i].name;
+                }
+                if(line_name == 'AB'){
+                    first_line_index = Lines.length;
+                }
                 Lines.push({
-                    name: shapes[i].name+shapes[j].name,
+                    name: line_name,
                     value: ((atan2(shapes[i].x - shapes[j].x, shapes[i].y - shapes[j].y)+180) % 180)
                 });
             }
@@ -43,14 +53,15 @@ p5.prototype.display = function () {
     Lines.sort((a, b) => (a.value > b.value) ? 1 : -1)
     var configuration = "";
     var configuration_array = "";
-    for(var i=0; i<Lines.length; i++){
-        configuration = configuration + Lines[i].name + " | ";
+    for(var li=first_line_index; li<first_line_index+Lines.length; li++){
+        i = li % Lines.length;
+        configuration = configuration + Lines[i].name + "|";
         configuration_array += "{'" + Lines[i].name[0] + "','" + Lines[i].name[1] + "'},";
     }
     fill("rgb(0,0,0)");
     text(configuration, 150, 150);
     document.getElementById("lines").value = "["+configuration_array.substring(0, configuration_array.length-1)+"]";
-    document.getElementById("representation").value = configuration;
+    document.getElementById("representation").value = configuration.substring(0, configuration.length-1);
     // Positions
     positions = ""
     for(var i=0; i<shapes.length; i++){
