@@ -41,7 +41,7 @@ p5.prototype.display = function () {
                     line_name = shapes[j].name+shapes[i].name;
                 }
                 if(line_name == 'AB'){
-                    first_line_index = Lines.length;
+                    first_line_index = Lines.length*1;
                 }
                 Lines.push({
                     name: line_name,
