@@ -19,8 +19,8 @@
   var diameter = 15;
   var showLines = true;
 
-  function myFunction() {
-    var copyText = document.getElementById("lines");
+  function myFunction(name) {
+    var copyText = document.getElementById(name);
     copyText.select();
     copyText.setSelectionRange(0, 99999);
     document.execCommand("copy");
@@ -62,9 +62,19 @@
 <button onclick="removePoint()">REMOVE</button>
 <button onclick="showLinesFunction()">Show lines</button>
 <br>
+Positions: <input type="text" id="positions" name="positions">
+<!-- The button used to copy the text -->
+<button onclick="myFunction('positions')">Copy text</button>
+<br><br>
+<br>
 Configuration: <input type="text" id="lines" name="lines">
 <!-- The button used to copy the text -->
-<button onclick="myFunction()">Copy text</button>
+<button onclick="myFunction('lines')">Copy text</button>
+<br><br>
+<br>
+Representation: <input type="text" id="representation" name="representation">
+<!-- The button used to copy the text -->
+<button onclick="myFunction('representation')">Copy text</button>
 <br><br>
 </body>
 

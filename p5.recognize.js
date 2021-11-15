@@ -50,6 +50,13 @@ p5.prototype.display = function () {
     fill("rgb(0,0,0)");
     text(configuration, 150, 150);
     document.getElementById("lines").value = "["+configuration_array.substring(0, configuration_array.length-1)+"]";
+    document.getElementById("representation").value = configuration;
+    // Positions
+    positions = ""
+    for(var i=0; i<shapes.length; i++){
+        positions += "("+shapes[i].x + ","+shapes[i].y+"),"
+    }
+    document.getElementById("positions").value = "{"+positions.substring(0, positions.length-1)+"}";
     // Draw points
     for(var i=0; i<shapes.length; i++){
         fill(shapes[i].col);
