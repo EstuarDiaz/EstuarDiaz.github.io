@@ -1,0 +1,264 @@
+
+.calendarCointainer {
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  font-family: "DINPro", "Helvetica Neue", sans-serif;
+  padding: 0rem;
+  margin: 0;
+  background: #fafafa;
+  box-sizing: border-box;
+  height: 100vh;
+}
+
+.calendar {
+  max-width: 1280px;
+  min-width: 500px;
+  box-shadow: 0px 30px 50px rgba(0, 0, 0, 0.2) ,0px 3px 7px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.calendar .outer {
+  position:relative;
+}
+
+
+.calendar .wrap {
+
+  overflow-x: hidden;
+  overflow-y: scroll;
+    max-width: 1280px;
+  height: 500px;
+  border-radius: 4px;
+}
+
+.calendar thead {
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.2);
+}
+
+.calendar thead th {
+
+  text-align: center;
+  width: 100%;
+
+}
+
+.calendar header {
+  background: #fff;
+  padding: 1rem;
+  color: rgba(0, 0, 0, 0.7);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 8px 8px 0px 0px;
+}
+
+.calendar header h1 {
+ font-size: 1.25rem;
+ text-align: center;
+ font-weight: normal;
+
+}
+.calendar tbody {
+    position: relative;
+  top: 100px;
+}
+.calendar table {
+  background: #fff;
+  width: 100%;
+  height: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+
+}
+
+
+
+.calendar .headcol {
+  width: 60px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.5);
+  padding: 0.25rem 0;
+  text-align: center;
+  border: 0;
+  position: relative;
+  top: -12px;
+  border-bottom: 1px solid transparent;
+}
+
+.calendar thead th {
+  font-size: 1rem;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.9);
+  padding: 1rem;
+}
+
+.calendar thead {
+    z-index: 2;
+    background: white;
+    border-bottom: 2px solid #ddd;
+
+}
+
+.calendar tr, tr td {
+  height: 20px;
+}
+.calendar td {
+  text-align: center;
+}
+.calendar tr:nth-child(odd) td:not(.headcol) {
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.calendar tr:nth-child(even) td:not(.headcol) {
+  border-bottom: 1px solid #eee;
+}
+
+.calendar tr td {
+  border-right: 1px solid #eee;
+  padding: 0;
+  white-space: none;
+  word-wrap: nowrap;
+}
+
+.calendar tbody tr td {
+  position: relative;
+  vertical-align: top;
+  height: 40px;
+  padding: 0.25rem 0.25rem 0 0.25rem;
+  width: auto;
+
+}
+
+.calendar .secondary {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+
+.calendar .checkbox {
+   display: none;
+}
+
+.calendar .checkbox + label {
+    border: 0;
+    outline: 0;
+    width: 100px;
+    height: 100px;
+    background: white;
+    color: transparent;
+    display:block;
+  display: none;
+}
+
+.calendar .checkbox:checked + label {
+    border: 0;
+    outline: 0;
+    width: 100%;
+    height: 100%;
+    background: red;
+    color: transparent;
+    display: inline-block;
+}
+
+.calendar .event {
+  background: #00B4FC;
+  color: white;
+  border-radius: 2px;
+  text-align: left;
+  font-size: 0.875rem;
+  z-index: 2;
+  padding: 0.5rem;
+  overflow-x: hidden;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.calendar .event:hover {
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+  background: #00B4FC;
+}
+
+.calendar .event.double {
+  height: 200%;
+}
+
+/**
+thead {
+    tr {
+      display: block;
+      position: relative;
+    }
+  }
+tbody {
+    display: block;
+    overflow: auto;
+    width: 800px;
+    height: 100%;
+  }
+*/
+
+
+
+.calendar td:hover:after {
+  /*content: "+";*/
+  vertical-align: middle;
+  font-size: 1.875rem;
+  font-weight: 100;
+  color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+}
+
+.calendar button.secondary {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: white;
+  padding: 0.5rem 0.75rem;
+  font-size: 14px;
+  border-radius: 2px;
+  color: rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.calendar button.secondary:hover {
+  background: #fafafa;
+}
+.calendar button.secondary:active {
+  box-shadow: none;
+}
+.calendar button.secondary:focus {
+  outline: 0;
+}
+
+/*
+.calendar tr td:nth-child(2), .calendar tr td:nth-child(3), .calendar .past {
+  background: #fafafa;
+}
+*/
+
+.calendar .today {
+  color: red;
+}
+
+.calendar .now {
+  box-shadow: 0px -1px 0px 0px red;
+}
+
+.calendar .icon {
+  font-size: 1.5rem;
+  margin: 0 1rem;
+  text-align: center;
+  cursor: pointer;
+  vertical-align: middle;
+  position: relative;
+  top: -2px;
+}
+
+.calendar .icon:hover {
+  color: red;
+}

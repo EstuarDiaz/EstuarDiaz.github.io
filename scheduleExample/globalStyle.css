@@ -1,0 +1,30 @@
+:root {
+  --uni-main-bg-color: #192187;
+}
+
+.body {
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  font-family: "DINPro", "Helvetica Neue", sans-serif;
+  padding: 0rem;
+  margin: 0;
+  margin-left:auto;
+  margin-right:auto;
+  display: inline-block;
+}
+span {
+  content: "\2139";
+}
+.bodyContainer {
+  margin: auto;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  font-family: "DINPro", "Helvetica Neue", sans-serif;
+  padding: 0rem;
+  background: #fafafa;
+  box-sizing: border-box;
+  height: 100vh;
+}

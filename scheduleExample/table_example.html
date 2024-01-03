@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="globalStyle.css">
+  <link rel="stylesheet" href="tableStyle.css">
+  <link rel="stylesheet" href="selectStyle.css">
+  <link rel="stylesheet" href="calendar/calendarStyle.css">
+  <script src="coursesData.js"></script>
+  <script src="./courses.js"></script>
+</head>
+<body onload="main()">
+  <div class="bodyContainer">
+    
+  <table class="filter-menu">
+    <tr>
+      <td>
+        <div class="custom-select" style="width:200px;">
+          <select>
+            <option value="0">Select period:</option>
+            <option value="1">All periods</option>
+            <option value="2">WS 2023</option>
+            <option value="3">SS 2024</option>
+            <option value="4">WS 2024</option>
+            <option value="5">SS 2025</option>
+          </select>
+        </div>
+      </td>
+      <td>
+        <div class="custom-select" style="width:200px;">
+          <select>
+            <option value="0">Select semester:</option>
+            <option value="1">First semester</option>
+            <option value="2">Second semester</option>
+            <option value="3">Third semester</option>
+            <option value="4">All semesters</option>
+          </select>
+        </div>
+      </td>
+      <td>
+        <div class="custom-select" style="width:200px;">
+          <select>
+            <option value="0">Lecture type:</option>
+            <option value="1">Lectures</option>
+            <option value="2">Seminars</option>
+            <option value="4">All types</option>
+          </select>
+        </div>
+      </td>
+      <td>
+        <p> <span>&#9432;</span> Click to add to the calendar below</p>
+      </td>
+    </tr>
+  </table> 
+  <script src="./selectScript.js"></script>
+  
+  <table class="styled-table" id="courseTable">
+    <thead>
+        <tr>
+            <th width="15%">Code</th>
+            <th width="25%">Course name</th>
+            <th width="25%">Responsible lecturer</th>
+            <th width="15%">Type</th>
+            <th width="10%">Credits</th>
+            <th width="10%">More info.</th>
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+
+  <div class="calendarCointainer">
+    <div class="calendar">
+      <header>
+      </header>
+      <div class="outer">
+      <table>
+      <thead>
+        <tr>
+          <th class="headcol"></th>
+          <th>Mon</th>
+          <th>Tue</th>
+          <th>Wed</th>
+          <th>Thu</th>
+          <th>Fri</th>
+        </tr>
+      </thead>
+      </table>
+    
+      <div class="wrap"> 
+        <table class="offset" id="calendarTable">
+        <tbody>
+        </tbody>
+      </table>
+      </div>
+      </div>
+    </div>
+  </div>
+  <script src="./calendar/calendar.js"></script>
+
+  </div>
+</body>
+</html>
+
+
