@@ -26,7 +26,7 @@ function addCourseRow(data) {
 
   var day = randomNumber(1, 5);
   var hour = randomNumber(8, 12);
-  row.onclick = addCourseHandler(day, hour, data.name + " - " + data.type);
+  row.onclick = addCourseHandler(day, hour, data.name + " - " + data.type + "<br> (" + data.room + ')');
 }
 
 // Function to generate random number

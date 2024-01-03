@@ -6,7 +6,8 @@ var coursesData =
     "semester": "SS 2024",
     "professor": "Prof. Albin Miller",
     "type": "Lecture",
-    "credits": 6
+    "credits": 6,
+    "room": "HS1"
   },
   {
     "code": "MatM.553",
@@ -14,7 +15,8 @@ var coursesData =
     "semester": "SS 2024",
     "professor": "Prof. Lin Cheng",
     "type": "Seminar",
-    "credits": 3
+    "credits": 3,
+    "room": "HS3"
   },
   {
     "code": "Mat.900",
@@ -22,7 +24,8 @@ var coursesData =
     "semester": "SS 2024",
     "professor": "Prof. Damaris",
     "type": "Lecture",
-    "credits": 6
+    "credits": 6,
+    "room": "HS5"
   },
   {
     "code": "MatM.152",
@@ -30,7 +33,8 @@ var coursesData =
     "semester": "SS 2024",
     "professor": "Prof. Thomas Ralf",
     "type": "Lecture",
-    "credits": 9
+    "credits": 9,
+    "room": "NM HS2"
   },
   {
     "code": "Mat.56",
@@ -38,7 +42,8 @@ var coursesData =
     "semester": "SS 2024",
     "professor": "Prof. Damaris",
     "type": "Lecture",
-    "credits": 6
+    "credits": 6,
+    "room": "HS2"
   },
   {
     "code": "MatM.456",
@@ -46,6 +51,7 @@ var coursesData =
     "semester": "SS 2024",
     "professor": "Prof. Thomas Ralf",
     "type": "Seminar",
-    "credits": 3
+    "credits": 3,
+    "room": "NM HS1"
   }
 ]
